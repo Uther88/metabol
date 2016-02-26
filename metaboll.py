@@ -1,5 +1,5 @@
 #---------------------------------------------------------------------------------#
-# Программа для расчета скорости метаболизма и количества необходимых калорий    #
+# Программа для расчета скорости метаболизма и количества необходимых калорий     #
 # для поддержания актуальной массы тела в течении суток, в зависимости от уровня  #
 # дневной активности                                                              #
 #---------------------------------------------------------------------------------#
@@ -8,13 +8,22 @@
 def man():
     try:
         weight = int(input("Ваш вес(кг): "))* 13.75
+    except ValueError:
+        print("Ошибка!") 
+        weight = int(input("Ваш вес(кг): "))* 13.75
+    try:
         height = int(input("Ваш рост(см): "))* 5
-        age = int(input("Ваш возраст: "))* 6.76
-        meta = int(66.47 + weight + height - age)
     except ValueError:
         print("Ошибка!")
-        man()
-    else:
+        height = int(input("Ваш рост(см): "))* 5
+    try:
+        age = int(input("Ваш возраст: "))* 6.76
+    except ValueError:
+        print("Ошибка!")
+        age = int(input("Ваш возраст: "))* 6.76
+ 
+    finally:
+        meta = int(66.47 + weight + height - age)
         print("Скорость вашего метаболизма равна: " + str(meta))
         print("Необходимое колличество калорий в сутки (в зависимости от физ. активности) состовляет от " + str(int(meta*1.2))+ " до " + str(int(meta*1.9)) + " калорий ")
  
@@ -22,13 +31,21 @@ def man():
 def woman():
     try:
         weight = int(input("Ваш вес(кг): "))* 9.56
-        height = int(input("Ваш рост(см): "))* 1.85
-        age = int(input("Ваш возраст: "))* 4.68
-        meta = int(655.1 + weight + height - age)
     except ValueError:
         print("Ошибка!")
-        woman()
-    else:
+        weight = int(input("Ваш вес(кг): "))* 9.56
+    try:
+        height = int(input("Ваш рост(см): "))* 1.85
+    except ValueError:
+        print("Ошибка!")
+        height = int(input("Ваш рост(см): "))* 1.85
+    try:
+        age = int(input("Ваш возраст: "))* 4.68
+    except ValueError:
+        print("Ошибка!")
+        age = int(input("Ваш возраст: "))* 4.68
+    finally:
+        meta = int(655.1 + weight + height - age)
         print("Скорость вашего метаболизма равна: " + str(meta))
         print("Необходимое колличество калорий в сутки (в зависимости от физ. активности) состовляет от " + str(int(meta*1.2))+ " до " + str(int(meta*1.9)) + " калорий ")
 
