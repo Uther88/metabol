@@ -71,6 +71,7 @@ class App(tkinter.Frame):
         self.button_quit = tkinter.Button(text='Выйти', command=self.master.destroy)
         self.button_quit.pack(side=BOTTOM,pady=15)
         
+# Actions
     def press_button_ok(self):       
         if self.gender.get() == 1:
             self.f.v.set(int((self.weight.get()*13.75)+(self.height.get()*5)-(self.age.get()*6.76)+66.47))
