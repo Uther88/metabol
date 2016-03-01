@@ -11,4 +11,4 @@ Python версии не ниже 3.0
 
 3. Как запустить?
 
-Ввести в консоли: $python metabol.py
+Ввести в консоли: $python metabol.py(metabol-gui.py)
